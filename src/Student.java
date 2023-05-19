@@ -1,4 +1,7 @@
-public class Student {
+import java.util.LinkedList;
+import java.util.function.UnaryOperator;
+
+public class Student extends LinkedList<Student> {
     private String name;
     private int id;
 
@@ -12,6 +15,11 @@ public class Student {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public void replaceAll(UnaryOperator<Student> operator) {
+        super.replaceAll(operator);
     }
 
     // Custom hashCode implementation
